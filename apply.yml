@@ -1,0 +1,14 @@
+---
+- name: Create Project and FIS Example 
+  hosts: "seed-hosts"
+  tasks:
+    - include_role:
+        name: openshift-applier/roles/openshift-applier
+
+
+    - name: Run a command using a templated variable (always use quote filter to avoid injection)
+      shell: oc project fis-rest-demo        
+
+    - name: Run a command using a templated variable (always use quote filter to avoid injection)
+      shell: oc rollout latest dc/fis-test
+

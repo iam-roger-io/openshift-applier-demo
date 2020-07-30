@@ -1,0 +1,14 @@
+NAME=fis-test
+VERSION_NUMBER=1.1
+RELEASE=false
+OWNER=user1
+TIER=back-end
+CUSTOMER_FACING=false
+APP_ROLE=api
+GIT_COMMIT=committ
+JENKINS_TAG=jt
+APP_TAG=1.1
+NAMESPACE=fis-rest-demo
+DEPLOYER_USER=user1
+PIPELINES_NAMESPACE=namespace
+NODE_ENV=dev

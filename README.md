@@ -1,0 +1,1 @@
+# openhift-applier-get-start
