@@ -4,22 +4,21 @@ ansible_connection: local
 openshift_cluster_content:
 - object: projects
   content:
-    - name: dev
+    - name: new-project
       template: "{{ inventory_dir }}/../templates/project/projectrequest-template.yml"
       action: create
       params: "{{ inventory_dir }}/../params/projectrequests/build"
       tags:
-      - projectrequests
-      - projectrequests-hml
-      - projectrequests-dev
-- object: fuse-components
+      - create
+
+- object: fuse-app
   content:
     - name: fis-test
       template: "{{ inventory_dir }}/../templates/app/fis-test.yml"
       params: "{{ inventory_dir }}/../params/app/build"
       namespace: "fis-rest-demo"
       tags:
-      - fis-test
+      - apply
   
 
 

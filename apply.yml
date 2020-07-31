@@ -2,13 +2,15 @@
 - name: Create Project and FIS Example 
   hosts: "seed-hosts"
   tasks:
-    - include_role:
-        name: openshift-applier/roles/openshift-applier
-
 
     - name: Run a command using a templated variable (always use quote filter to avoid injection)
-      shell: oc project fis-rest-demo        
+      shell: oc login --token=5vrbMvtK6C6EhASOA7OBhFIx1uuOH-TK4Aqd6oJV7A4 --server=https://api.cluster-latam-2f77.latam-2f77.example.opentlc.com:6443
+
+    - include_role:
+        name: openshift-applier/roles/openshift-applier
+    
+    - name: Run a command using a templated variable (always use quote filter to avoid injection)
+      shell: oc project fis-rest-demo
 
     - name: Run a command using a templated variable (always use quote filter to avoid injection)
       shell: oc rollout latest dc/fis-test
-
